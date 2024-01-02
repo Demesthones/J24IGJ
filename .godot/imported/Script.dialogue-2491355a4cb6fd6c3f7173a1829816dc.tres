@@ -1,0 +1,347 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_7y88h"]
+
+[resource]
+script = ExtResource("1_7y88h")
+using_states = PackedStringArray()
+titles = {
+"first_hundred": "23",
+"five_hundred": "35",
+"kitty_needs_attention": "47",
+"on_corruption_ten": "59",
+"on_ten_coffees": "53",
+"roadblock1": "29",
+"start": "17",
+"this_is_a_node_title": "3",
+"thousand_words": "41"
+}
+character_names = PackedStringArray("Nathan", "You")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "this_is_a_node_title",
+"type": "title"
+},
+"10": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "end",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "End the conversation",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "End the conversation",
+"type": "response"
+},
+"11": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "13",
+"tags": PackedStringArray(),
+"text": "For more information see the online documentation.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "For more information see the online documentation.",
+"type": "dialogue"
+},
+"13": {
+"id": "13",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"15": {
+"id": "15",
+"next_id": "17",
+"text": "start",
+"type": "title"
+},
+"17": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "17",
+"next_id": "19",
+"tags": PackedStringArray(),
+"text": "This is it. I'm going to write this book. I've been dreaming of it for years! I have so many thoughts and ideas I want to share, I just need to put pen to paper.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "This is it. I'm going to write this book. I've been dreaming of it for years! I have so many thoughts and ideas I want to share, I just need to put pen to paper.",
+"type": "dialogue"
+},
+"19": {
+"id": "19",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"21": {
+"id": "21",
+"next_id": "23",
+"text": "first_hundred",
+"type": "title"
+},
+"23": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "23",
+"next_id": "25",
+"tags": PackedStringArray(),
+"text": "This is going so well. 100 words already, can you believe it? I'll have this done in no time.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "This is going so well. 100 words already, can you believe it? I'll have this done in no time.",
+"type": "dialogue"
+},
+"25": {
+"id": "25",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"27": {
+"id": "27",
+"next_id": "29",
+"text": "roadblock1",
+"type": "title"
+},
+"29": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "29",
+"next_id": "31",
+"tags": PackedStringArray(),
+"text": "Hmm, I'm a bit stuck today. Not sure what I want to say, like the words are just out of reach. Maybe I'll take a walk to clear my mind.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hmm, I'm a bit stuck today. Not sure what I want to say, like the words are just out of reach. Maybe I'll take a walk to clear my mind.",
+"type": "dialogue"
+},
+"3": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello|Howdy]], this is some dialogue.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello|Howdy]], this is some dialogue.",
+"type": "dialogue"
+},
+"31": {
+"id": "31",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"33": {
+"id": "33",
+"next_id": "35",
+"text": "five_hundred",
+"type": "title"
+},
+"35": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "35",
+"next_id": "37",
+"tags": PackedStringArray(),
+"text": "Whew, this is a lot of work. Honestly I didn't expect it to be this hard. Maybe I can look into getting some help...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Whew, this is a lot of work. Honestly I didn't expect it to be this hard. Maybe I can look into getting some help...",
+"type": "dialogue"
+},
+"37": {
+"id": "37",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"39": {
+"id": "39",
+"next_id": "41",
+"text": "thousand_words",
+"type": "title"
+},
+"4": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"tags": PackedStringArray(),
+"text": "Here are some choices.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Here are some choices.",
+"type": "dialogue"
+},
+"41": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "41",
+"next_id": "43",
+"tags": PackedStringArray(),
+"text": "Feeling kind of lonely working on this thing all alone. Would love to have a little buddy...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Feeling kind of lonely working on this thing all alone. Would love to have a little buddy...",
+"type": "dialogue"
+},
+"43": {
+"id": "43",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"45": {
+"id": "45",
+"next_id": "47",
+"text": "kitty_needs_attention",
+"type": "title"
+},
+"47": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "47",
+"next_id": "49",
+"tags": PackedStringArray(),
+"text": "YOWCH! Stupid cat just scratched me! I guess you want pets or something?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "YOWCH! Stupid cat just scratched me! I guess you want pets or something?",
+"type": "dialogue"
+},
+"49": {
+"id": "49",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"next_id_after": "11",
+"responses": PackedStringArray("5", "7", "9", "10"),
+"tags": PackedStringArray(),
+"text": "First one",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "First one",
+"type": "response"
+},
+"51": {
+"id": "51",
+"next_id": "53",
+"text": "on_ten_coffees",
+"type": "title"
+},
+"53": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "53",
+"next_id": "55",
+"tags": PackedStringArray(),
+"text": "need. more. coffee. not. enough.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "need. more. coffee. not. enough.",
+"type": "dialogue"
+},
+"55": {
+"id": "55",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"57": {
+"id": "57",
+"next_id": "59",
+"text": "on_corruption_ten",
+"type": "title"
+},
+"59": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "59",
+"next_id": "60",
+"tags": PackedStringArray(),
+"text": "Wait, what was that? Something... something isn't right with what that ghost writer sent over last.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Wait, what was that? Something... something isn't right with what that ghost writer sent over last.",
+"type": "dialogue"
+},
+"6": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "11",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "You picked the first one.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You picked the first one.",
+"type": "dialogue"
+},
+"60": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "60",
+"next_id": "61",
+"tags": PackedStringArray(),
+"text": "My eyes cant focus on it. I'm not even sure what it says.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "My eyes cant focus on it. I'm not even sure what it says.",
+"type": "dialogue"
+},
+"61": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "61",
+"next_id": "63",
+"tags": PackedStringArray(),
+"text": "And I... I can't delete it either! What the fuck is this?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "And I... I can't delete it either! What the fuck is this?",
+"type": "dialogue"
+},
+"63": {
+"id": "63",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "Second one",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Second one",
+"type": "response"
+},
+"8": {
+"character": "Nathan",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "11",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "You picked the second one.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "You picked the second one.",
+"type": "dialogue"
+},
+"9": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "3",
+"next_id_after": "11",
+"tags": PackedStringArray(),
+"text": "Start again",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Start again",
+"type": "response"
+}
+}
+metadata/dialogue_manager_version = "2.31.0"

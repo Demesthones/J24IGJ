@@ -15,8 +15,6 @@ Nathan: For more information see the online documentation.
 ~ start
 
 You: This is it. I'm going to write this book. I've been dreaming of it for years! I have so many thoughts and ideas I want to share, I just need to put pen to paper.
-You: test line 2
-You: test line 3
 
 => END
 
@@ -32,3 +30,34 @@ You: Hmm, I'm a bit stuck today. Not sure what I want to say, like the words are
 
 => END
 
+~ five_hundred
+
+You: Whew, this is a lot of work. Honestly I didn't expect it to be this hard. Maybe I can look into getting some help...
+
+=> END
+
+~ thousand_words
+
+You: Feeling kind of lonely working on this thing all alone. Would love to have a little buddy...
+
+=> END
+
+~ kitty_needs_attention
+
+You: YOWCH! Stupid cat just scratched me! I guess you want pets or something?
+
+=> END
+
+~ on_ten_coffees
+
+You: need. more. coffee. not. enough.
+
+=> END
+
+~ on_corruption_ten
+
+You: Wait, what was that? Something... something isn't right with what that ghost writer sent over last.
+You: My eyes cant focus on it. I'm not even sure what it says. 
+You: And I... I can't delete it either! What the fuck is this?
+
+=> END

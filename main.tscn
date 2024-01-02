@@ -18,7 +18,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.968627, 0.843137, 0.788235, 1)
+color = Color(0.976471, 0.921569, 0.866667, 1)
 metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
@@ -75,6 +75,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
+[node name="WalkTimerLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
 [node name="FundsLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Funds:"
@@ -91,8 +95,20 @@ layout_mode = 2
 text = "Coffee:"
 horizontal_alignment = 2
 
+[node name="KittyAttentionLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="CorruptionLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="WalkTimerAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="FundsAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
@@ -104,6 +120,16 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="CoffeeAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="KittyAttentionAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="CorruptionAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -130,6 +156,16 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 
+[node name="BuyCoffeeMachineButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TakeWalkButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
 [node name="BuyKittyButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
 layout_mode = 2
@@ -141,6 +177,11 @@ layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="GetJobButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="BuyAutoTyperButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -159,7 +200,7 @@ scroll_active = false
 
 [node name="PlayerPreview" type="TextEdit" parent="Background/VBoxContainer/HBoxContainer/WritingArea"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 210)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 editable = false
 wrap_mode = 1
@@ -168,8 +209,16 @@ autowrap_mode = 2
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="RoadblockTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyCoffeeButton" to="." method="_on_buy_coffee_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyCoffeeMachineButton" to="." method="_on_buy_coffee_machine_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TakeWalkButton" to="." method="_on_take_walk_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyKittyButton" to="." method="_on_buy_kitty_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton" to="." method="_on_pet_kitty_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/GetJobButton" to="." method="_on_get_job_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyAutoTyperButton" to="." method="_on_buy_auto_typer_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RoadblockTimer" to="." method="_on_roadblock_timer_timeout"]
