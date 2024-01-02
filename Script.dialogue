@@ -1,0 +1,34 @@
+~ this_is_a_node_title
+
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => this_is_a_node_title
+- End the conversation => END
+Nathan: For more information see the online documentation.
+
+=> END
+
+~ start
+
+You: This is it. I'm going to write this book. I've been dreaming of it for years! I have so many thoughts and ideas I want to share, I just need to put pen to paper.
+You: test line 2
+You: test line 3
+
+=> END
+
+~ first_hundred
+
+You: This is going so well. 100 words already, can you believe it? I'll have this done in no time.
+
+=> END
+
+~ roadblock1
+
+You: Hmm, I'm a bit stuck today. Not sure what I want to say, like the words are just out of reach. Maybe I'll take a walk to clear my mind.
+
+=> END
+

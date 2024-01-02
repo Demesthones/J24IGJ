@@ -1,0 +1,175 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo612bn8jfsw2"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_cfhpi"]
+[ext_resource type="Script" path="res://WritingArea.gd" id="2_ck2tr"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_cfhpi")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.968627, 0.843137, 0.788235, 1)
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 724.0
+
+[node name="CompletionBar" type="TextureProgressBar" parent="Background/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1280, 40)
+layout_mode = 2
+max_value = 100000.0
+
+[node name="CompletionBarLabel" type="Label" parent="Background/VBoxContainer/CompletionBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="DeadlineBar" type="TextureProgressBar" parent="Background/VBoxContainer/CompletionBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1280, 10)
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 40.0
+step = 0.01
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 474)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(515, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="FundsLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Funds:"
+horizontal_alignment = 2
+
+[node name="MotivationLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Motivation:"
+horizontal_alignment = 2
+
+[node name="CoffeeLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Coffee:"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="FundsAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MotivationAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CoffeeAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="FundsPerMinuteLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MotivationChangeLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="BoxContainer" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+vertical = true
+
+[node name="BuyCoffeeButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="BuyKittyButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="PetKittyButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="GetJobButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="WritingArea" type="VBoxContainer" parent="Background/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(638, 440)
+layout_mode = 2
+script = ExtResource("2_ck2tr")
+
+[node name="PromptLabel" type="RichTextLabel" parent="Background/VBoxContainer/HBoxContainer/WritingArea"]
+custom_minimum_size = Vector2(638, 31)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][/center]"
+scroll_active = false
+
+[node name="PlayerPreview" type="TextEdit" parent="Background/VBoxContainer/HBoxContainer/WritingArea"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+editable = false
+wrap_mode = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyCoffeeButton" to="." method="_on_buy_coffee_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyKittyButton" to="." method="_on_buy_kitty_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton" to="." method="_on_pet_kitty_button_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/GetJobButton" to="." method="_on_get_job_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
