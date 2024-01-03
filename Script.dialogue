@@ -50,7 +50,11 @@ You: YOWCH! Stupid cat just scratched me! I guess you want pets or something?
 
 ~ on_ten_coffees
 
+<<<<<<< HEAD
 You: need. more. coffee. not. enough.
+=======
+You: need. more. coffee. not. enough. coffee.
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 
 => END
 

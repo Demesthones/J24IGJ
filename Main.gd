@@ -6,6 +6,7 @@ var current_letter_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+<<<<<<< HEAD
 	PlayerVariables._on_funds_half.connect(_on_funds_half)
 	PlayerVariables._on_motivation_half.connect(_on_motivation_half)
 	PlayerVariables._on_hundred_words.connect(_on_hundred_words)
@@ -13,6 +14,30 @@ func _ready():
 	PlayerVariables._on_kitty_needs_attention.connect(_on_kitty_needs_attention)
 	
 	
+=======
+	PlayerVariables._on_motivation_half.connect(_on_motivation_half)
+	PlayerVariables._on_funds_half.connect(_on_funds_half)
+	PlayerVariables._on_hundred_words.connect(_on_hundred_words)
+	PlayerVariables._on_five_hundred_words.connect(_on_five_hundred_words)
+	PlayerVariables._on_thousand_words.connect(_on_thousand_words)
+	PlayerVariables._on_kitty_needs_attention.connect(_on_kitty_needs_attention)
+	PlayerVariables._on_roadblock.connect(_on_roadblock)
+	PlayerVariables._on_ten_coffees.connect(_on_ten_coffees)
+	PlayerVariables._on_corruption_ten.connect(_on_corruption_ten)
+	PlayerVariables._on_corruption_fourty.connect(_on_corruption_fourty)
+	PlayerVariables._on_funds_half.connect(_on_funds_half)
+	PlayerVariables._on_corruption_ninety.connect(_on_corruption_ninety)
+	PlayerVariables._on_publisher_offer.connect(_on_publisher_offer)
+	PlayerVariables._on_deadline_increase_one.connect(_on_deadline_increase_one)
+	
+	
+	%CoffeeAmountLabel.visible_characters = 0
+	%CorruptionAmountLabel.visible_characters = 0
+	%WalkTimerAmountLabel.visible_characters = 0
+	%KittyAttentionAmountLabel.visible_characters = 0
+	%CoffeeChangeLabel.visible_characters = 0
+	
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 	
 	#flip_timer()
 	var i = DialogueManager.show_dialogue_balloon(resource, "start")
@@ -22,10 +47,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+<<<<<<< HEAD
 	if PlayerVariables.resources.kitty.attentionLevel < 25:
 		$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton.disabled = false
 	else:
 		$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton.disabled = true
+=======
+	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton.disabled = false if PlayerVariables.resources.kitty.attentionLevel < 25 else true
+	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TakeWalkButton.disabled = true if PlayerVariables.resources.roadblock == false else false
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 	update_labels()
 	
 func _unhandled_input(event: InputEvent):
@@ -49,12 +79,28 @@ func _unhandled_input(event: InputEvent):
 func update_labels(): 
 	%CompletionBarLabel.text = str(PlayerVariables.resources.wordCount, "/", %CompletionBar.max_value)
 	%FundsAmountLabel.text = str(PlayerVariables.resources.funds)
+<<<<<<< HEAD
 	%MotivationAmountLabel.text = str(PlayerVariables.resources.motivation)
 	%CoffeeAmountLabel.text = str(PlayerVariables.resources.coffee.amount)
 	%KittyAttentionAmountLabel.text = str(PlayerVariables.resources.kitty.attentionLevel)
 	%WalkTimerAmountLabel.text = str($RoadblockTimer.time_left)
 	%CorruptionAmountLabel.text = str(PlayerVariables.resources.ghostWriter.corruption)
 	
+=======
+	if !PlayerVariables.resources.roadblock:
+		%MotivationAmountLabel.text = str(PlayerVariables.resources.motivation)
+	else:
+		%MotivationAmountLabel.text = "Roadblock"
+	%CoffeeAmountLabel.text = str(PlayerVariables.resources.coffee.amount)
+	%KittyAttentionAmountLabel.text = str(PlayerVariables.resources.kitty.attentionLevel)
+	%WalkTimerAmountLabel.text = str(snapped($RoadblockTimer.time_left, .01))
+	%CorruptionAmountLabel.text = str(PlayerVariables.resources.ghostWriter.corruption)
+	
+	%FundsChangeLabel.text = str(PlayerVariables.resources.rps.fpsTotal)
+	%MotivationChangeLabel.text = str(PlayerVariables.resources.rps.mpsTotal)
+	%CoffeeChangeLabel.text = str(PlayerVariables.resources.rps.cpsTotal)
+	
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyCoffeeButton.text = str("Buy Coffee ($", PlayerVariables.resources.coffee.cost, ")")
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyKittyButton.text = str("Buy Kitty ($", PlayerVariables.resources.kitty.cost, ", $", PlayerVariables.resources.kitty.fps, "/s)")
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyAutoTyperButton.text = str("Employ Ghost Writer ($", PlayerVariables.resources.ghostWriter.cost, ", $", PlayerVariables.resources.ghostWriter.fps, "/s)")
@@ -83,6 +129,10 @@ func _on_buy_kitty_button_pressed():
 	PlayerVariables.resources.funds += PlayerVariables.resources.kitty.cost
 	PlayerVariables.resources.kitty.count += 1
 	PlayerVariables.upgrades.kitty = true
+<<<<<<< HEAD
+=======
+	%KittyAttentionAmountLabel.visible_characters = -1
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 
 
 func _on_pet_kitty_button_pressed():
@@ -95,10 +145,26 @@ func _on_pet_kitty_button_pressed():
 func _on_get_job_button_pressed():
 	PlayerVariables.upgrades.job = true
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/GetJobButton.visible = false
+<<<<<<< HEAD
 
 func _on_motivation_half():
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyCoffeeButton.visible = true
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/CoffeeLabel.visible = true
+=======
+	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/QuitJobButton.visible = true
+	
+func _on_quit_job_button_pressed():
+	PlayerVariables.upgrades.job = false
+	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/GetJobButton.visible = true
+	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/QuitJobButton.visible = false
+
+
+func _on_motivation_half():
+	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyCoffeeButton.visible = true
+	%CoffeeLabel.visible = true
+	%CoffeeAmountLabel.visible_characters = -1
+	%CoffeeChangeLabel.visible_characters = -1
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 
 func _on_funds_half():
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/GetJobButton.visible = true
@@ -124,8 +190,13 @@ func _on_thousand_words():
 	
 func _on_kitty_needs_attention():
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton.visible = true
+<<<<<<< HEAD
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/KittyAttentionLabel.visible = true
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/KittyAttentionAmountLabel.visible = true
+=======
+	%KittyAttentionLabel.visible = true
+	%KittyAttentionAmountLabel.visible = true
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 	DialogueManager.show_dialogue_balloon(resource, "on_kitty_needs_attention")
 	
 	
@@ -149,14 +220,24 @@ func _on_buy_auto_typer_button_pressed():
 
 
 func _on_take_walk_button_pressed():
+<<<<<<< HEAD
 	$RoadblockTimer.start
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/WalkTimerLabel.visible = true
+=======
+	PlayerVariables.resources.roadblock = true
+	$RoadblockTimer.start()
+	%WalkTimerLabel.visible = true
+	%WalkTimerAmountLabel.visible_characters = -1
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 	#Display some kind of bar for timer status
 	
 
 func _on_roadblock_timer_timeout():
 	PlayerVariables.unblock()
+<<<<<<< HEAD
 	$Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/WalkTimerLabel.visible = false
+=======
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 	pass # Replace with function body.
 
 
@@ -167,7 +248,30 @@ func _on_buy_coffee_machine_button_pressed():
 
 
 func _on_corruption_ten():
+<<<<<<< HEAD
 	$CorruptionLabel.visible = true
 	$CorruptionAmountLabel.visible = true
 	DialogueManager.show_dialogue_balloon(resource, "on_corruption_ten")
 	
+=======
+	%CorruptionLabel.visible = true
+	%CorruptionAmountLabel.visible_characters = -1
+	DialogueManager.show_dialogue_balloon(resource, "on_corruption_ten")
+	
+func _on_corruption_fourty():
+	pass
+	
+
+func _on_corruption_ninety():
+	pass
+
+
+func _on_publisher_offer():
+	pass
+	
+	
+func _on_deadline_increase_one():
+	pass
+
+
+>>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
