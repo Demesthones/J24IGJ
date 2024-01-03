@@ -1,22 +1,26 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_7y88h"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_hs53u"]
 
 [resource]
-script = ExtResource("1_7y88h")
+script = ExtResource("1_hs53u")
 using_states = PackedStringArray()
 titles = {
 "first_hundred": "23",
-"five_hundred": "35",
-"kitty_needs_attention": "47",
+"five_hundred_words": "41",
+"on_corruption_fourty": "67",
+"on_corruption_ninety": "75",
 "on_corruption_ten": "59",
+"on_deadline_increase_one": "94",
+"on_kitty_needs_attention": "47",
+"on_publisher_offer": "83",
 "on_ten_coffees": "53",
 "roadblock1": "29",
 "start": "17",
 "this_is_a_node_title": "3",
-"thousand_words": "41"
+"two_hundred": "35"
 }
-character_names = PackedStringArray("Nathan", "You")
+character_names = PackedStringArray("Nathan", "You", "???", "PUBLISHER")
 first_title = "3"
 lines = {
 "1": {
@@ -137,7 +141,7 @@ lines = {
 "33": {
 "id": "33",
 "next_id": "35",
-"text": "five_hundred",
+"text": "two_hundred",
 "type": "title"
 },
 "35": {
@@ -160,7 +164,7 @@ lines = {
 "39": {
 "id": "39",
 "next_id": "41",
-"text": "thousand_words",
+"text": "five_hundred_words",
 "type": "title"
 },
 "4": {
@@ -194,7 +198,7 @@ lines = {
 "45": {
 "id": "45",
 "next_id": "47",
-"text": "kitty_needs_attention",
+"text": "on_kitty_needs_attention",
 "type": "title"
 },
 "47": {
@@ -239,9 +243,9 @@ lines = {
 "id": "53",
 "next_id": "55",
 "tags": PackedStringArray(),
-"text": "need. more. coffee. not. enough.",
+"text": "need. more. coffee. not. enough. coffee.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "need. more. coffee. not. enough.",
+"translation_key": "need. more. coffee. not. enough. coffee.",
 "type": "dialogue"
 },
 "55": {
@@ -307,6 +311,45 @@ lines = {
 "next_id": "end",
 "type": "goto"
 },
+"65": {
+"id": "65",
+"next_id": "67",
+"text": "on_corruption_fourty",
+"type": "title"
+},
+"67": {
+"character": "???",
+"character_replacements": Array[Dictionary]([]),
+"id": "67",
+"next_id": "68",
+"tags": PackedStringArray(),
+"text": "i seek the answer.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "i seek the answer.",
+"type": "dialogue"
+},
+"68": {
+"character": "???",
+"character_replacements": Array[Dictionary]([]),
+"id": "68",
+"next_id": "69",
+"tags": PackedStringArray(),
+"text": "together we will find it.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "together we will find it.",
+"type": "dialogue"
+},
+"69": {
+"character": "???",
+"character_replacements": Array[Dictionary]([]),
+"id": "69",
+"next_id": "71",
+"tags": PackedStringArray(),
+"text": "continue the work.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "continue the work.",
+"type": "dialogue"
+},
 "7": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
@@ -318,6 +361,57 @@ lines = {
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Second one",
 "type": "response"
+},
+"71": {
+"id": "71",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"73": {
+"id": "73",
+"next_id": "75",
+"text": "on_corruption_ninety",
+"type": "title"
+},
+"75": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "75",
+"next_id": "76",
+"tags": PackedStringArray(),
+"text": "I can feel it, like a physical presence, heavy on my chest, foul in the air.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I can feel it, like a physical presence, heavy on my chest, foul in the air.",
+"type": "dialogue"
+},
+"76": {
+"character": "???",
+"character_replacements": Array[Dictionary]([]),
+"id": "76",
+"next_id": "77",
+"tags": PackedStringArray(),
+"text": "almost there.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "almost there.",
+"type": "dialogue"
+},
+"77": {
+"character": "???",
+"character_replacements": Array[Dictionary]([]),
+"id": "77",
+"next_id": "79",
+"tags": PackedStringArray(),
+"text": "too late to stop it now.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "too late to stop it now.",
+"type": "dialogue"
+},
+"79": {
+"id": "79",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 },
 "8": {
 "character": "Nathan",
@@ -331,6 +425,78 @@ lines = {
 "translation_key": "You picked the second one.",
 "type": "dialogue"
 },
+"81": {
+"id": "81",
+"next_id": "83",
+"text": "on_publisher_offer",
+"type": "title"
+},
+"83": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "83",
+"next_id": "84",
+"tags": PackedStringArray(),
+"text": "Oh! A letter addressed to me! Who could it be from?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Oh! A letter addressed to me! Who could it be from?",
+"type": "dialogue"
+},
+"84": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "84",
+"next_id": "85",
+"tags": PackedStringArray(),
+"text": "The return address is scratched out, wonder if something happened in shipping...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "The return address is scratched out, wonder if something happened in shipping...",
+"type": "dialogue"
+},
+"85": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "85",
+"next_id": "86",
+"tags": PackedStringArray(),
+"text": "Wow. This is. This is an offer for my book!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Wow. This is. This is an offer for my book!",
+"type": "dialogue"
+},
+"86": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "86",
+"next_id": "87",
+"tags": PackedStringArray(),
+"text": "That's incredible! I have to accept. I really needed this.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "That's incredible! I have to accept. I really needed this.",
+"type": "dialogue"
+},
+"87": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "87",
+"next_id": "88",
+"tags": PackedStringArray(),
+"text": "...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "...",
+"type": "dialogue"
+},
+"88": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "88",
+"next_id": "90",
+"tags": PackedStringArray(),
+"text": "I don't remember sending my book out to anyone though, weird.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I don't remember sending my book out to anyone though, weird.",
+"type": "dialogue"
+},
 "9": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
@@ -342,6 +508,57 @@ lines = {
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Start again",
 "type": "response"
+},
+"90": {
+"id": "90",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"92": {
+"id": "92",
+"next_id": "94",
+"text": "on_deadline_increase_one",
+"type": "title"
+},
+"94": {
+"character": "PUBLISHER",
+"character_replacements": Array[Dictionary]([]),
+"id": "94",
+"next_id": "95",
+"tags": PackedStringArray(),
+"text": "Due to cosmic circumstances we are informing you that we require the book to be completed and delivered sooner than expected.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Due to cosmic circumstances we are informing you that we require the book to be completed and delivered sooner than expected.",
+"type": "dialogue"
+},
+"95": {
+"character": "PUBLISHER",
+"character_replacements": Array[Dictionary]([]),
+"id": "95",
+"next_id": "96",
+"tags": PackedStringArray(),
+"text": "Failure to meet this advanced deadline will result in penalties.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Failure to meet this advanced deadline will result in penalties.",
+"type": "dialogue"
+},
+"96": {
+"character": "PUBLISHER",
+"character_replacements": Array[Dictionary]([]),
+"id": "96",
+"next_id": "98",
+"tags": PackedStringArray(),
+"text": "We are very sorry for this inconvenience.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "We are very sorry for this inconvenience.",
+"type": "dialogue"
+},
+"98": {
+"id": "98",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 }
 }
 metadata/dialogue_manager_version = "2.31.0"

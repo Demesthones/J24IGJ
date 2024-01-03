@@ -1,5 +1,5 @@
 res://main.tscn
 res://theme.tres
+res://WritingArea.gd
 res://Main.gd
 res://player_variables.gd
-res://WritingArea.gd

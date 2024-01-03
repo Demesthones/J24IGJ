@@ -11,8 +11,8 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	PlayerVariables._gen_ghost_prompt.connect(_gen_ghost_prompt)
-	gen_prompt()
+	PlayerVariables._gen_ghost_prompt.connect(gen_ghost_prompt)
+	gen_prompt("long long ago in a land far far away")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,16 +20,14 @@ func _process(delta):
 	pass
 
 
-func gen_prompt():
-	prompt_text = PromptList.get_prompt()
+func gen_prompt(pt := ""):
+	prompt_text = pt if pt.length() > 0 else PromptList.get_prompt()
 	var next_character_index = 0
 	set_next_character(next_character_index)
 	#prompt.parse_bbcode(set_center_tags(get_bbcode_color_tag(red) + prompt_text + get_bbcode_end_color_tag()))
-	print(prompt_text)
 
-func _gen_ghost_prompt(): 
-	ghost_prompt_text = PromptList.get_prompt()
-	print("ghost prompt: ", ghost_prompt_text)
+func gen_ghost_prompt(pt := ""): 
+	ghost_prompt_text = pt if pt.length() > 0 else PromptList.get_prompt()
 	get_node("PlayerPreview").text += ghost_prompt_text + " "
 
 func set_next_character(next_character_index: int):
@@ -39,7 +37,6 @@ func set_next_character(next_character_index: int):
 	if next_character_index != prompt_text.length():
 		red_text = get_bbcode_color_tag(red) + prompt_text.substr(next_character_index+1, prompt_text.length() - next_character_index+1) + get_bbcode_end_color_tag()
 	else:
-		print("getting new prompt")
 		get_node("PlayerPreview").text += prompt_text + " "
 		gen_prompt()
 		return

@@ -30,19 +30,19 @@ You: Hmm, I'm a bit stuck today. Not sure what I want to say, like the words are
 
 => END
 
-~ five_hundred
+~ two_hundred
 
 You: Whew, this is a lot of work. Honestly I didn't expect it to be this hard. Maybe I can look into getting some help...
 
 => END
 
-~ thousand_words
+~ five_hundred_words
 
 You: Feeling kind of lonely working on this thing all alone. Would love to have a little buddy...
 
 => END
 
-~ kitty_needs_attention
+~ on_kitty_needs_attention
 
 You: YOWCH! Stupid cat just scratched me! I guess you want pets or something?
 
@@ -50,11 +50,7 @@ You: YOWCH! Stupid cat just scratched me! I guess you want pets or something?
 
 ~ on_ten_coffees
 
-<<<<<<< HEAD
-You: need. more. coffee. not. enough.
-=======
 You: need. more. coffee. not. enough. coffee.
->>>>>>> bc110a8c2c5f8460d55e032ba88967ff3dfd31c1
 
 => END
 
@@ -63,5 +59,40 @@ You: need. more. coffee. not. enough. coffee.
 You: Wait, what was that? Something... something isn't right with what that ghost writer sent over last.
 You: My eyes cant focus on it. I'm not even sure what it says. 
 You: And I... I can't delete it either! What the fuck is this?
+
+=> END
+
+~ on_corruption_fourty
+
+???: i seek the answer.
+???: together we will find it.
+???: continue the work.
+
+=> END
+
+~ on_corruption_ninety
+
+You: I can feel it, like a physical presence, heavy on my chest, foul in the air.
+???: almost there.
+???: too late to stop it now.
+
+=> END
+
+~ on_publisher_offer
+
+You: Oh! A letter addressed to me! Who could it be from?
+You: The return address is scratched out, wonder if something happened in shipping...
+You: Wow. This is. This is an offer for my book! 
+You: That's incredible! I have to accept. I really needed this.
+You: ...
+You: I don't remember sending my book out to anyone though, weird.
+
+=> END
+
+~ on_deadline_increase_one
+
+PUBLISHER: Due to cosmic circumstances we are informing you that we require the book to be completed and delivered sooner than expected.
+PUBLISHER: Failure to meet this advanced deadline will result in penalties.
+PUBLISHER: We are very sorry for this inconvenience.
 
 => END
