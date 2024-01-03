@@ -2,6 +2,7 @@ extends VBoxContainer
 
 @onready var prompt = $PromptLabel
 @onready var prompt_text = prompt.text
+@onready var ghost_prompt_text
 
 @export var green = Color("#007b00")
 @export var red = Color("#5e041a")
@@ -10,6 +11,7 @@ extends VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerVariables._gen_ghost_prompt.connect(_gen_ghost_prompt)
 	gen_prompt()
 
 
@@ -25,6 +27,10 @@ func gen_prompt():
 	#prompt.parse_bbcode(set_center_tags(get_bbcode_color_tag(red) + prompt_text + get_bbcode_end_color_tag()))
 	print(prompt_text)
 
+func _gen_ghost_prompt(): 
+	ghost_prompt_text = PromptList.get_prompt()
+	print("ghost prompt: ", ghost_prompt_text)
+	get_node("PlayerPreview").text += ghost_prompt_text + " "
 
 func set_next_character(next_character_index: int):
 	var gray_text = get_bbcode_color_tag(gray) + prompt_text.substr(0, next_character_index) + get_bbcode_end_color_tag()

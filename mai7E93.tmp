@@ -118,7 +118,6 @@ layout_mode = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-text = "Walk Timer:"
 
 [node name="WalkTimerAmountLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
@@ -152,15 +151,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="FundsChangeLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="FundsPerMinuteLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 
 [node name="MotivationChangeLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="CoffeeChangeLabel" type="Label" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -183,7 +178,6 @@ size_flags_horizontal = 0
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Take a walk (10s)"
 
 [node name="BuyKittyButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
@@ -194,16 +188,11 @@ size_flags_horizontal = 0
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Pet Kitty (+? attn)"
 
 [node name="GetJobButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
-
-[node name="QuitJobButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
-visible = false
-layout_mode = 2
 
 [node name="BuyAutoTyperButton" type="Button" parent="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
@@ -243,7 +232,6 @@ one_shot = true
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyKittyButton" to="." method="_on_buy_kitty_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/PetKittyButton" to="." method="_on_pet_kitty_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/GetJobButton" to="." method="_on_get_job_button_pressed"]
-[connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/QuitJobButton" to="." method="_on_quit_job_button_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/BuyAutoTyperButton" to="." method="_on_buy_auto_typer_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RoadblockTimer" to="." method="_on_roadblock_timer_timeout"]
